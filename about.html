@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Carlos Martinez Muñoz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--beige:#F5F0E8;--beige-dark:#EDE6D6;--beige-deep:#D9CEB8;--green:#2D5A27;--green-mid:#3D7A35;--green-light:#6BAE63;--green-pale:#C8DCC5;--ink:#1A1A14;--ink-mid:#3A3A30;--ink-light:#6B6B5A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--beige);color:var(--ink);font-family:'DM Mono',monospace;overflow-x:hidden;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--beige);border-bottom:1px solid var(--beige-deep);}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;color:var(--green);text-decoration:none;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--ink-mid);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--green);}
+
+  .page-header{padding:8rem 3rem 3rem;border-bottom:1px solid var(--beige-deep);background:var(--beige-dark);}
+  .page-header-tag{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;}
+  .page-header h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;}
+
+  /* Layout: sidebar + main */
+  .about-layout{display:grid;grid-template-columns:300px 1fr;min-height:60vh;}
+
+  .about-sidebar{
+    padding:4rem 2.5rem;
+    border-right:1px solid var(--beige-deep);
+    background:var(--beige-dark);
+  }
+  /* Profile photo — mobile safe: use percentage width not fixed px */
+  .profile-img{
+    width:100%;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    background:var(--beige-deep);
+    margin-bottom:1.5rem;
+  }
+  .profile-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:sepia(8%);}
+
+  .sidebar-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:0.2rem;}
+  .sidebar-role{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:1.5rem;}
+  .sidebar-detail{font-size:0.65rem;letter-spacing:0.08em;color:var(--ink-light);padding:0.6rem 0;border-bottom:1px solid var(--beige-deep);display:flex;justify-content:space-between;}
+  .sidebar-detail span:last-child{color:var(--ink-mid);}
+
+  .about-main{padding:4rem 3rem 5rem;}
+  .about-section{margin-bottom:4rem;}
+  .about-section-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;}
+  .about-section-title::after{content:'';flex:1;height:1px;background:var(--beige-deep);}
+  .about-body{font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.9;color:var(--ink-mid);font-weight:300;max-width:640px;}
+  .about-body p+p{margin-top:1.2rem;}
+
+  .timeline{margin-top:2rem;}
+  .timeline-item{display:grid;grid-template-columns:130px 1fr;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--beige-deep);}
+  .tl-year{font-size:0.65rem;letter-spacing:0.1em;color:var(--green);padding-top:0.2rem;}
+  .tl-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:0.4rem;}
+  .tl-desc{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink-mid);line-height:1.6;font-weight:300;}
+
+  footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--beige-deep);}
+  .footer-left{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
+  .footer-right{font-family:'Playfair Display',serif;font-style:italic;color:var(--green);font-size:0.9rem;}
+
+  @media(max-width:768px){
+    nav{padding:1rem 1.2rem;}
+    .nav-links{gap:1rem;}
+    .nav-links a{font-size:0.6rem;}
+    .page-header{padding:7rem 1.5rem 2rem;}
+    .about-layout{grid-template-columns:1fr;}
+    .about-sidebar{border-right:none;border-bottom:1px solid var(--beige-deep);padding:3rem 1.5rem;}
+    /* On mobile sidebar photo stays proportional — aspect-ratio handles it */
+    .about-main{padding:3rem 1.5rem;}
+    .timeline-item{grid-template-columns:90px 1fr;gap:1rem;}
+    footer{flex-direction:column;gap:1rem;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Carlos M. Muñoz</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-tag">Background & Experience</p>
+  <h1>About Me</h1>
+</div>
+
+<div class="about-layout">
+  <aside class="about-sidebar">
+    <div class="profile-img">
+      <img src="carlos_portrait.png" alt="Carlos Martinez Muñoz">
+    </div>
+    <div class="sidebar-name">Carlos Martinez Muñoz</div>
+    <div class="sidebar-role">Aspiring Aerospace Engineer</div>
+    <div class="sidebar-detail"><span>Based</span><span>Dubai, UAE</span></div>
+    <div class="sidebar-detail"><span>Program</span><span>TKS</span></div>
+    <div class="sidebar-detail"><span>Team</span><span>GreenPower Racing</span></div>
+    <div class="sidebar-detail"><span>Fabrication</span><span>Bambu Labs</span></div>
+    <div class="sidebar-detail"><span>Focus</span><span>Supersonic Flight</span></div>
+    <div class="sidebar-detail"><span>Sim Tool</span><span>CFD / Wind Tunnel</span></div>
+  </aside>
+
+  <main class="about-main">
+
+    <div class="about-section">
+      <div class="about-section-title">Who I am</div>
+      <div class="about-body">
+        <p>I'm heading into aerospace engineering. The part of it that keeps pulling me back is high-speed flight — specifically the fluid dynamics problems that stop being tractable with simple models once you're past Mach 1. The physics changes in ways that aren't obvious until you sit down with the Navier-Stokes equations and actually work through what compressibility does to a boundary layer.</p>
+        <p>I'm based in Dubai and have spent the last couple of years building technical experience through a mix of my own projects, a school racing team, and The Knowledge Society programme. The thread connecting most of it is a preference for doing things — making physical objects, running simulations, building and breaking prototypes — over treating engineering as a purely theoretical exercise.</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-section-title">3D Printing & Fabrication</div>
+      <div class="about-body">
+        <p>The Bambu Labs printer is the fastest way I have to close the loop between an idea and something I can physically test. I use it for airframe iterations on the EDF rocket, structural mock-ups for aerodynamic components, and for fabricating the riblet geometry test samples from the APEX biomimetic skin work. The print speed matters — being able to run through several geometry versions in a week changes how I design.</p>
+        <p>The main lesson from doing this repeatedly is that the design constraints you discover once a part is in your hands are almost never the ones you anticipated on screen. Surface finish, layer adhesion under load, and the places where a printed part flexes differently from how a solid model predicts — these only show up when you build the thing.</p>
+        <p>Writing the space printing article extended this interest into a different context: what would fabrication need to look like to work in orbit, with no gravity, no convection cooling, and feedstocks that bear no resemblance to polymer filament?</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-section-title">The Knowledge Society — TKS</div>
+      <div class="about-body">
+        <p>TKS put me in situations where I had to understand a company well enough to argue a non-obvious position about it in public, and then defend that position under questioning. The XPANCEo pitch — framing smart contact lenses as a space medicine tool for SANS detection rather than a consumer wearable — placed 3rd in the cohort. The Lovable pitch, building a secondary education growth strategy, made UAE finals.</p>
+        <p>What changed most from TKS wasn't the technical knowledge — it was the discipline of getting to the actual interesting question fast. Most pitches fail because they spend too long on what the product does and not enough on why the framing they've chosen is the right one. Learning to lead with the argument changed how I present everything, including technical work.</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-section-title">GreenPower Racing Team</div>
+      <div class="about-body">
+        <p>My school competes in the GreenPower electric racing challenge, and I've been working on two aero components: the back panel and the nose cone. The existing bodywork was shaped by what the team could build, which is a reasonable starting point but leaves a lot of drag on the table.</p>
+        <p>The back panel redesign targets the pressure drag from the wake behind the driver. The nose cone work is about leading edge profiles — several variants modelled, with different trade-offs between frontal area, flow attachment, and how well they survive being built by hand. The constraint that matters most is this last one: a theoretically optimal geometry that can't be fabricated cleanly doesn't perform the way the model says it will.</p>
+        <p>Track data feeds back into each revision. It's a slow loop but it's an honest one — the numbers come from a real car on a real circuit, not a simulation that doesn't know what a student-built surface finish actually looks like.</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-section-title">Timeline</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-year">Ongoing</div>
+          <div>
+            <div class="tl-title">APEX Aerodynamics — Supersonic Aircraft & Biomimetic Skin</div>
+            <div class="tl-desc">Full aircraft design for zero-emission Mach 1.5+ flight, plus biomimetic riblet skin physics analysis, 3D modelling, and wind tunnel simulation showing 7.4% drag reduction at Mach 1.8.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">Ongoing</div>
+          <div>
+            <div class="tl-title">GreenPower Racing — Back Panel & Nose Cone Redesign</div>
+            <div class="tl-desc">Aerodynamic component redesign for school GreenPower race car. Track data used to validate geometry changes.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">TKS</div>
+          <div>
+            <div class="tl-title">EDF Rocket Project</div>
+            <div class="tl-desc">VTOL rocket using Electric Ducted Fans, with iterative 3D printed airframe development on Bambu Labs hardware.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">TKS</div>
+          <div>
+            <div class="tl-title">Lovable Pitch — UAE Finalist</div>
+            <div class="tl-desc">Secondary education growth strategy for Lovable AI app builder. UAE finals.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">TKS</div>
+          <div>
+            <div class="tl-title">XPANCEo Presentation — 3rd Place</div>
+            <div class="tl-desc">Space medicine pitch for XPANCEo smart contact lens platform — SANS detection framing. 3rd place in cohort.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">Oct 2025</div>
+          <div>
+            <div class="tl-title">Learn Article — Printing the Future of Space Colonisation</div>
+            <div class="tl-desc">Technical article on additive manufacturing in microgravity: constraints, current ISS systems, and what in-orbit fabrication needs to look like for Mars missions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-left">© 2025 Carlos Martinez Muñoz · GitHub Pages</div>
+  <div class="footer-right">Build. Fly. Iterate.</div>
+</footer>
+
+</body>
+</html>

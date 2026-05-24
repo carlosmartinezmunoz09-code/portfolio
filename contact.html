@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Carlos Martinez Muñoz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige:#F5F0E8;--beige-dark:#EDE6D6;--beige-deep:#D9CEB8;
+    --green:#2D5A27;--green-mid:#3D7A35;--green-light:#6BAE63;
+    --green-pale:#C8DCC5;--ink:#1A1A14;--ink-mid:#3A3A30;--ink-light:#6B6B5A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--beige);color:var(--ink);font-family:'DM Mono',monospace;overflow-x:hidden;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--beige);border-bottom:1px solid var(--beige-deep);}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;letter-spacing:0.05em;color:var(--green);text-decoration:none;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--ink-mid);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--green);}
+
+  /* MAIN SPLIT */
+  .contact-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 4rem);
+    padding-top: 4rem;
+  }
+
+  /* LEFT — beige */
+  .contact-left {
+    padding: 6rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--beige-deep);
+  }
+
+  .contact-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 5.5vw, 5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    margin-bottom: 2.5rem;
+  }
+  .contact-heading em {
+    display: block;
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .contact-blurb {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    font-weight: 300;
+    max-width: 360px;
+    margin-bottom: 3.5rem;
+  }
+
+  .contact-methods { display: flex; flex-direction: column; }
+
+  .contact-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--beige-deep);
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+  }
+  .contact-method:hover { color: var(--green); }
+
+  .cm-left {}
+  .cm-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.3rem;
+  }
+  .contact-method:hover .cm-label { color: var(--green-light); }
+  .cm-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+  }
+  .contact-method:hover .cm-value { color: var(--green); }
+  .cm-arrow {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    transition: color 0.2s, transform 0.2s;
+  }
+  .contact-method:hover .cm-arrow { color: var(--green); transform: translate(2px,-2px); }
+
+  /* RIGHT — dark green */
+  .contact-right {
+    background: var(--green);
+    padding: 6rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ql-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--beige);
+    margin-bottom: 0.6rem;
+  }
+  .ql-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--green-pale);
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+  }
+
+  .quick-links { display: flex; flex-direction: column; }
+
+  .ql-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.4rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--beige);
+    text-decoration: none;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: background 0.2s, padding-left 0.2s;
+  }
+  .quick-links .ql-link:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .ql-link:hover { background: rgba(255,255,255,0.08); padding-left: 1.8rem; }
+  .ql-link span:last-child { font-size: 0.75rem; opacity: 0.7; }
+
+  /* TAGLINE BAR */
+  .tagline-bar {
+    background: var(--beige-dark);
+    border-top: 1px solid var(--beige-deep);
+    padding: 4.5rem 3rem;
+    text-align: center;
+  }
+  .tagline-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .tagline-text em { font-style: italic; color: var(--green); }
+  .tagline-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 1rem;
+  }
+
+  footer {
+    padding: 1.8rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--beige-deep);
+  }
+  .footer-left { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+  .footer-right { font-family: 'Playfair Display', serif; font-style: italic; color: var(--green); font-size: 0.85rem; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.6rem; }
+    .contact-split { grid-template-columns: 1fr; min-height: auto; }
+    .contact-left { padding: 8rem 1.5rem 4rem; border-right: none; border-bottom: 1px solid var(--beige-deep); }
+    .contact-right { padding: 3.5rem 1.5rem; }
+    .tagline-bar { padding: 3rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Carlos M. Muñoz</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="contact-split">
+
+  <!-- LEFT -->
+  <div class="contact-left">
+    <p class="contact-tag">Get in touch</p>
+    <h1 class="contact-heading">
+      Let's
+      <em>talk</em>
+      flight.
+    </h1>
+    <p class="contact-blurb">Whether you're working on something in aerospace, or have any questions — feel free to reach out.</p>
+
+    <div class="contact-methods">
+      <a href="mailto:carlosmartinezmunoz09@gmail.com" class="contact-method">
+        <div class="cm-left">
+          <div class="cm-label">Email</div>
+          <div class="cm-value">carlosmartinezmunoz09@gmail.com</div>
+        </div>
+        <span class="cm-arrow">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/carlos-martinez-mu%C3%B1oz-b7a289319/" target="_blank" class="contact-method">
+        <div class="cm-left">
+          <div class="cm-label">LinkedIn</div>
+          <div class="cm-value">Carlos Martinez Muñoz</div>
+        </div>
+        <span class="cm-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="contact-right">
+    <div class="ql-heading">Project Links</div>
+    <p class="ql-sub">Explore the work directly — presentations, research, and the APEX Aerodynamics site.</p>
+
+    <div class="quick-links">
+      <a href="https://carlosmartinezmunoz09-code.github.io/apexaerodynamics.world/" target="_blank" class="ql-link">
+        <span>APEX Aerodynamics Site</span><span>↗</span>
+      </a>
+      <a href="https://www.canva.com/design/DAG8CLhxQvQ/OoFTjeFsnsi08FLk-XrJoA/edit" target="_blank" class="ql-link">
+        <span>XPANCEo Presentation</span><span>↗</span>
+      </a>
+      <a href="https://www.canva.com/design/DAHAD9z-ScQ/0mjOXH1ZBlOT9QNKREpV1w/edit" target="_blank" class="ql-link">
+        <span>Lovable Pitch</span><span>↗</span>
+      </a>
+      <a href="https://docs.google.com/document/d/1Ak1Z1xwShUdw3fmousYKJ2SzdXfBROz7mUZzxSpC0Bk/edit?tab=t.0" target="_blank" class="ql-link">
+        <span>3D Printing in Space — Article</span><span>↗</span>
+      </a>
+      <a href="projects.html" class="ql-link">
+        <span>All Projects</span><span>→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="tagline-bar">
+  <div class="tagline-text">Build. <em>Fly.</em> Iterate.</div>
+  <div class="tagline-sub">Dubai, UAE · Aerospace Engineering</div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2025 Carlos Martinez Muñoz · GitHub Pages</div>
+  <div class="footer-right">Build. Fly. Iterate.</div>
+</footer>
+
+</body>
+</html>
