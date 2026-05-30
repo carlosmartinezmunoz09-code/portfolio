@@ -122,12 +122,12 @@
       <h2 class="project-title">APEX Aerodynamics — Zero-Emission Supersonic Aircraft</h2>
       <div class="project-body">
         <p>The starting point was a simple frustration: supersonic commercial flight has been commercially dead since Concorde retired in 2003, and the reason isn't physics — it's economics and noise. APEX Aerodynamics is my attempt to put together a credible technical path to Mach 1.8+ flight that doesn't trade speed for environmental disaster.</p>
-        <p>The aircraft design targets four specific problems simultaneously. First, propulsion: hydrogen fuel cells replace kerosene entirely, dropping carbon emissions to zero. Second, noise: the airframe shape draws from NASA-validated low-boom shaping work, targeting perceived loudness below 75 decibels — roughly the threshold that makes overland supersonic routes viable. Third, drag: the biomimetic surface skin (see the separate project below) attacks skin friction directly. Fourth, thermal management: at Mach 1.8+ sustained cruise, aerodynamic heating loads the airframe in ways that don't show up at subsonic speeds, so material choices have to be baked in from the start.</p>
+        <p>The aircraft design targets four specific problems simultaneously. First, propulsion: hydrogen fuel cells replace kerosene entirely, dropping carbon emissions to zero. Second, noise: the airframe shape draws from NASA-validated low-boom shaping work, targeting perceived loudness below 75 decibels — roughly the threshold that makes overland supersonic routes viable. Third, drag: the biomimetic surface skin (see the separate project below) attacks skin friction directly. Fourth, thermal management: at Mach 1.8+ sustained cruise, aerodynamic heating loads the airframe in ways that don't show up at subsonic speeds, so material choices have to be considered the start.</p>
         <p>The project sits at the intersection of multiple engineering disciplines — propulsion, structures, aerodynamics, and acoustics all feed into each other. What I've built so far is a coherent design philosophy backed by physics analysis and simulation, with a roadmap for further development. The APEX site documents the full argument: problem framing, solution logic, technology stack, market case, and roadmap.</p>
-        <p>The headline numbers from the current design: Mach 1.5+ cruise, 0% carbon emissions, sub-75 dB perceived sonic loudness, and a projected 1.8 billion tonne CO₂ prevention figure by 2040 if the platform scales into commercial operation.</p>
+        <p>The headline numbers from the current design: Mach 1.8+ cruise, 0% carbon emissions, sub-75 dB perceived sonic loudness, and a projected 1.8 billion tonne CO₂ prevention figure by 2040 if the platform scales into commercial operation.</p>
       </div>
       <div style="margin-top:1rem;">
-        <span class="tag-pill">Mach 1.5+</span>
+        <span class="tag-pill">Mach 1.8+</span>
         <span class="tag-pill">Hydrogen Propulsion</span>
         <span class="tag-pill">Low-Boom Shaping</span>
         <span class="tag-pill">0% Carbon</span>
@@ -182,14 +182,13 @@
       <h2 class="project-title">EDF Vertical-Takeoff Rocket</h2>
       <div class="project-body">
         <p>The question that kicked this off was whether you could use Electric Ducted Fans — the kind designed for RC aircraft — to get a rocket-shaped vehicle off the ground and bring it back down under control. Not a theoretical question, a build-it-and-see one.</p>
-        <p>The airframe went through several Bambu Labs print iterations. Each version was dealing with a different problem: first run was thrust alignment — the EDF units need precise angular positioning or the vehicle yaws uncontrollably on lift. Second run addressed structural flex in the central tube under thrust load. Third tackled the geometry of the nozzle housing, which was creating turbulent separation that robbed exit velocity from the fan stream.</p>
+        <p>The airframe went through several print iterations. Each version was dealing with a different problem: first run was thrust alignment — the EDF units need precise positioning or the vehicle yaws uncontrollably on lift. Moreover the second iteration will attempt to correct the current mass issue, in order to alow the rocket to achieve higher altitudes. </p>
         <p>The prototype in the image shows the current airframe alongside the motor mount rings. The nose cone uses a tangent ogive profile — not because it matters aerodynamically at the speeds involved, but because understanding why it doesn't matter at low speed, and when it would start to matter, is part of the exercise. Landing is the hard part still being worked through. Controlling the thrust-to-weight ratio on the way down, where any overshoot means a hard landing and any undershoot means losing control authority, is a control problem that doesn't have a simple fix.</p>
       </div>
       <div style="margin-top:1rem;">
         <span class="tag-pill">EDF Propulsion</span>
         <span class="tag-pill">3D Printed Airframe</span>
         <span class="tag-pill">VTOL</span>
-        <span class="tag-pill">Bambu Labs</span>
         <span class="tag-pill">Thrust Control</span>
       </div>
     </div>
@@ -207,8 +206,8 @@
       <h2 class="project-title">GreenPower Challenge — Aerodynamic Redesign</h2>
       <div class="project-body">
         <p>My school runs a team in the GreenPower electric racing challenge. The car the team built had bodywork that was shaped more by what was manufacturable than what was fast — which left room to improve, particularly at the front and rear.</p>
-        <p>The back panel work focused on the wake that forms behind the driver's helmet and shoulders. The existing design had a flat rear termination, which generates a large, low-pressure recirculating region that adds significant pressure drag. The redesign tapers the trailing edge and adds a small diffuser-like kick at the base to encourage wake closure further upstream. Whether this actually delivers on the theory depends on surface finish and how well the shape survives the team's fabrication process — which is a real constraint.</p>
-        <p>The nose cone work involved developing multiple variants with different leading edge profiles. The aim is reducing frontal area without sacrificing the structural integrity the cone needs to protect the driver, and keeping the flow attached along the side of the car for as long as possible. Several variants have been modelled; the ones that make it to track testing will feed data back into the next round of geometry changes.</p>
+        <p>The back panel work focused on the wake that forms behind the driver's helmet and shoulders. The existing design was non-existent. The redesign tapers the trailing edge and adds a small diffuser-like kick at the base to encourage wake closure further upstream. Whether this actually delivers on the theory depends on surface finish and how well the shape survives the team's fabrication process — which is a real constraint.</p>
+        <p>The nose cone work involved developing multiple variants with different leading edge profiles. The aim is reducing frontal area without sacrificing the structural integrity the cone needs to protect the driver, and keeping the flow attached along the side of the car for as long as possible.</p>
         <p>The GreenPower team poster shows the Leopards Racing livery. The aero work I'm doing feeds into future seasons.</p>
       </div>
       <div style="margin-top:1rem;">
@@ -216,7 +215,6 @@
         <span class="tag-pill">Nose Cone Variants</span>
         <span class="tag-pill">Electric Racing</span>
         <span class="tag-pill">GreenPower</span>
-        <span class="tag-pill">Pressure Drag</span>
       </div>
     </div>
     <div class="project-visual">
@@ -230,16 +228,16 @@
     <div class="project-num">05</div>
     <div class="project-meta">
       <p class="project-category">TKS Program · Pitch Competition · 3rd Place</p>
-      <h2 class="project-title">XPANCEo Presentation</h2>
+      <h2 class="project-title">XPANCEO Presentation</h2>
       <div class="project-body">
-        <p>XPANCEo makes smart contact lenses. During TKS I was assigned to build a pitch around how the technology could be positioned for maximum impact — which meant going past the consumer AR framing and into something with harder near-term value.</p>
+        <p>XPANCEO makes smart contact lenses. During TKS I was assigned to build a pitch around how the technology could be positioned for maximum impact — which meant going past the consumer AR framing and into something with harder near-term value.</p>
         <p>The angle I took was space medicine: astronauts on the ISS suffer from Spaceflight Associated Neuro-ocular Syndrome (SANS) — intracranial pressure buildup that permanently damages vision. There's no non-invasive way to monitor it in real time. XPANCEo's tear biomarker sensing, pointed at that problem, becomes a genuinely urgent clinical tool rather than a lifestyle product, and builds toward an $11B+ market on the path back to consumer wearables.</p>
         <p>The presentation placed 3rd in the cohort. The exercise taught me that knowing your subject well enough to argue the non-obvious framing, and defend it when challenged, is a different skill than just understanding the technology.</p>
       </div>
       <div style="margin-top:1rem;">
         <span class="tag-pill">TKS</span>
         <span class="tag-pill">3rd Place</span>
-        <span class="tag-pill">XPANCEo</span>
+        <span class="tag-pill">XPANCEO</span>
         <span class="tag-pill">Space Medicine</span>
         <span class="tag-pill">SANS Detection</span>
       </div>
@@ -249,7 +247,7 @@
     </div>
     <div class="project-visual">
       <img src="xpanceo_pitch.png" alt="XPANCEo × TKS — Protecting Vision in Space pitch cover">
-      <div class="visual-label">TKS · XPANCEo Pitch</div>
+      <div class="visual-label">TKS · XPANCEO Pitch</div>
     </div>
   </div>
 
@@ -269,7 +267,6 @@
         <span class="tag-pill">UAE Finalist</span>
         <span class="tag-pill">Lovable</span>
         <span class="tag-pill">EdTech Growth</span>
-        <span class="tag-pill">$404B Market</span>
       </div>
       <div class="project-links">
         <a href="https://www.canva.com/design/DAHAD9z-ScQ/0mjOXH1ZBlOT9QNKREpV1w/edit" target="_blank" class="proj-link">View Presentation ↗</a>
@@ -294,9 +291,8 @@
       </div>
       <div style="margin-top:1rem;">
         <span class="tag-pill">Space Manufacturing</span>
-        <span class="tag-pill">Additive Mfg</span>
+        <span class="tag-pill">Additive Manufacturing</span>
         <span class="tag-pill">Microgravity</span>
-        <span class="tag-pill">Artemis</span>
         <span class="tag-pill">TKS</span>
       </div>
       <div class="project-links">
@@ -312,7 +308,7 @@
 </div>
 
 <footer>
-  <div class="footer-left">© 2025 Carlos Martinez Muñoz · GitHub Pages</div>
+  <div class="footer-left">© 2026 Carlos Martinez Muñoz · GitHub Pages</div>
   <div class="footer-right">Build. Fly. Iterate.</div>
 </footer>
 
